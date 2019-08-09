@@ -1,7 +1,7 @@
 [alias]
 
-  feature-abort = "!f() { \
+  feature-list = "!f() { \
     : auto-complete-disabled ; \
     for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1> /dev/null; then echo "${c} was NOT found, exiting..."; exit 1; fi; done; \
-    git merge --abort; \
+    git branch --all --list '*feature/*'; \
     }; f"

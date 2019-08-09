@@ -40,6 +40,7 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
@@ -58,6 +59,7 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
@@ -146,6 +148,7 @@ git push --set-upstream origin next
 * feature-continue : OK
 * feature-end-current : need more testing
 * feature-end : OK
+* feature-list : OK
 * feature-status : need more testing
 * feature-to-master-current : need more testing
 * feature-to-master : OK
