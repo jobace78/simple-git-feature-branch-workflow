@@ -39,13 +39,22 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end-current.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-current.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-current.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
       git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
+      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/sync.inc
       ```
 
       Or manually update your `~/.gitconfig` file with something like this:
@@ -58,13 +67,22 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end-current.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-current.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-current.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/sync.inc
       ```
 
 ## Usage
@@ -81,6 +99,7 @@ echo '# test' > README.md && \
 git add README.md && \
 git commit -m "Initial commit" && \
 git push --set-upstream origin master && \
+git remote set-head origin master && \
 git branch next && \
 git checkout next && \
 git push --set-upstream origin next
@@ -150,6 +169,7 @@ git push --set-upstream origin next
 * feature-end : OK
 * feature-list : OK
 * feature-status : need more testing
+* feature-to-infinity-and-beyond : OK
 * feature-to-master-current : need more testing
 * feature-to-master : OK
 * feature-to-next-current : need more testing
