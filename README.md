@@ -32,32 +32,7 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
 
   2. Update your configuration:
 
-      ```bash
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end-current.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-current.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-current.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
-      git config --global include.path ~/simple-git-feature-branch-workflow/gitconfig.d/sync.inc
-      ```
-
-      Or manually update your `~/.gitconfig` file with something like this:
+      Edit your `~/.gitconfig` file with something like this:
 
       ```text
       [include]
