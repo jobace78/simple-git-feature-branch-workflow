@@ -39,17 +39,18 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin-hard.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end-current.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond-hard.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-current.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-hard.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-current.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-hard.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
@@ -57,7 +58,6 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/sync.inc
       ```
 
 ## Usage
@@ -83,7 +83,7 @@ git push --set-upstream origin next
   1. *Begin* a new feature:
 
       ```bash
-      git feature-begin WIP-1
+      git feature-begin-hard WIP-1
       ```
 
   2. Add something:
@@ -103,7 +103,7 @@ git push --set-upstream origin next
   4. *Merge* (A.K.A. integrate) the feature in the local **next** branch:
 
       ```bash
-      git feature-to-next WIP-1
+      git feature-to-next-hard WIP-1
       ```
 
   5. *Push* (A.K.A. publish) the local **next** branch into **remote/origin**:
@@ -115,7 +115,7 @@ git push --set-upstream origin next
   6. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
 
       ```bash
-      git feature-to-master WIP-1
+      git feature-to-master-hard WIP-1
       ```
 
   7. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
@@ -137,25 +137,29 @@ git push --set-upstream origin next
 * auto-dry-run : OK
 * auto : OK
 * feature-abort : OK
-* feature-begin : OK
+* feature-begin-hard : OK
+* feature-begin : need more testing
 * feature-clean : OK
 * feature-continue : OK
-* feature-end-current : need more testing
+* feature-end-current : DEPRECATED !!!
 * feature-end : OK
 * feature-list : OK
 * feature-status : need more testing
-* feature-to-infinity-and-beyond : OK
-* feature-to-master-current : need more testing
-* feature-to-master : OK
-* feature-to-next-current : need more testing
-* feature-to-next : OK
+* feature-to-infinity-and-beyond-hard : OK
+* feature-to-infinity-and-beyond : need more testing
+* feature-to-master-current : DEPRECATED !!!
+* feature-to-master-hard : OK
+* feature-to-master : need more testing
+* feature-to-next-current : DEPRECATED !!!
+* feature-to-next-hard : OK
+* feature-to-next : need more testing
 * feature-where-is : OK
 * publish-master : OK
 * publish-next : OK
 * release-clean : need more testing
 * release-status : need more testing
 * release : need more testing
-* sync : need more testing
+* sync : DEPRECATED !!!
 
 ## License
 

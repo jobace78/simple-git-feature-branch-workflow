@@ -15,7 +15,6 @@
       else \
         git fetch origin --prune && \
         git checkout next && \
-        git reset --hard origin/next && \
         git merge --message 'Merge branch '"${feature_name}"' into next' --no-ff "${feature_name}"; \
       fi; \
     else \
