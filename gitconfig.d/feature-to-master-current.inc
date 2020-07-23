@@ -15,7 +15,6 @@
       else \
         git fetch origin --prune && \
         git checkout master && \
-        git reset --hard origin/master && \
         git merge --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
       fi; \
     else \

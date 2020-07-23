@@ -6,8 +6,6 @@
     echo '-- THIS ALIAS IS IN BETA STATE --'; \
     echo; \
     git fetch origin --prune --prune-tags --tags; \
-    : git reset --hard origin/master; \
     : git pull --ff-only master; \
-    : git reset --hard origin/next; \
     : git pull --ff-only next; \
     }; f"

@@ -10,7 +10,6 @@
       [ -n "${feature_name}" ] || { echo "feature_name was NOT found, exiting..."; exit 1; }; \
       git fetch origin --prune && \
       git checkout next && \
-      git reset --hard origin/next && \
       git merge --message 'Merge branch '"${feature_name}"' into next' --no-ff "${feature_name}"; \
     fi; \
     }; f"
