@@ -39,18 +39,18 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin-hard.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond-hard.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-hard.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-hard.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
@@ -137,29 +137,25 @@ git push --set-upstream origin next
 * auto-dry-run : OK
 * auto : OK
 * feature-abort : OK
-* feature-begin-hard : OK
-* feature-begin : need more testing
+* feature-begin-no-reset : need more testing
+* feature-begin : OK
 * feature-clean : OK
 * feature-continue : OK
-* feature-end-current : DEPRECATED !!!
 * feature-end : OK
 * feature-list : OK
 * feature-status : need more testing
-* feature-to-infinity-and-beyond-hard : OK
-* feature-to-infinity-and-beyond : need more testing
-* feature-to-master-current : DEPRECATED !!!
-* feature-to-master-hard : OK
-* feature-to-master : need more testing
-* feature-to-next-current : DEPRECATED !!!
-* feature-to-next-hard : OK
-* feature-to-next : need more testing
+* feature-to-infinity-and-beyond-no-reset : need more testing
+* feature-to-infinity-and-beyond : OK
+* feature-to-master-no-reset : need more testing
+* feature-to-master : OK
+* feature-to-next-no-reset : need more testing
+* feature-to-next : OK
 * feature-where-is : OK
 * publish-master : OK
 * publish-next : OK
+* release : need more testing
 * release-clean : need more testing
 * release-status : need more testing
-* release : need more testing
-* sync : DEPRECATED !!!
 
 ## License
 
