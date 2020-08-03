@@ -1,6 +1,6 @@
 [alias]
 
-  feature-to-master-hard = "!f() { \
+  feature-to-master = "!f() { \
     : git checkout ; \
     for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1> /dev/null; then echo "${c} was NOT found, exiting..."; exit 1; fi; done; \
     if [ x"${1}" = x ]; then \
@@ -10,7 +10,6 @@
       [ -n "${feature_name}" ] || { echo "feature_name was NOT found, exiting..."; exit 1; }; \
       git fetch origin --prune && \
       git checkout master && \
-      git reset --hard origin/master && \
       git merge --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
     fi; \
     }; f"

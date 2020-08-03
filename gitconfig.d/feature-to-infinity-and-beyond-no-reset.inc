@@ -1,6 +1,6 @@
 [alias]
 
-  feature-to-infinity-and-beyond-hard = "!f() { \
+  feature-to-infinity-and-beyond-no-reset = "!f() { \
     : git checkout ; \
     for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1> /dev/null; then echo "${c} was NOT found, exiting..."; exit 1; fi; done; \
     if [ x"${1}" = x ]; then \
@@ -18,7 +18,6 @@
       echo; \
       git fetch origin --prune && \
       git checkout next && \
-      git reset --hard origin/next && \
       git merge --message 'Merge branch '"${feature_name}"' into next' --no-ff "${feature_name}"; \
       echo; \
       echo '-- publish-next --'; \
@@ -30,7 +29,6 @@
       echo; \
       git fetch origin --prune && \
       git checkout master && \
-      git reset --hard origin/master && \
       git merge --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
       echo; \
       echo '-- publish-master --'; \

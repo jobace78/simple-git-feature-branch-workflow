@@ -10,6 +10,7 @@
       [ -n "${feature_name}" ] || { echo "feature_name was NOT found, exiting..."; exit 1; }; \
       git fetch origin --prune && \
       git checkout master && \
+      git reset --hard origin/master && \
       git branch "${feature_name}" && \
       git checkout "${feature_name}"; \
     fi; \

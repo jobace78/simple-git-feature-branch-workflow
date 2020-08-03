@@ -18,6 +18,7 @@
       echo; \
       git fetch origin --prune && \
       git checkout next && \
+      git reset --hard origin/next && \
       git merge --message 'Merge branch '"${feature_name}"' into next' --no-ff "${feature_name}"; \
       echo; \
       echo '-- publish-next --'; \
@@ -29,6 +30,7 @@
       echo; \
       git fetch origin --prune && \
       git checkout master && \
+      git reset --hard origin/master && \
       git merge --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
       echo; \
       echo '-- publish-master --'; \
