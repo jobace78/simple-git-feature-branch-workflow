@@ -83,7 +83,7 @@ git push --set-upstream origin next
   1. *Begin* a new feature:
 
       ```bash
-      git feature-begin-hard WIP-1
+      git feature-begin WIP-1
       ```
 
   2. Add something:
@@ -103,7 +103,7 @@ git push --set-upstream origin next
   4. *Merge* (A.K.A. integrate) the feature in the local **next** branch:
 
       ```bash
-      git feature-to-next-hard WIP-1
+      git feature-to-next WIP-1
       ```
 
   5. *Push* (A.K.A. publish) the local **next** branch into **remote/origin**:
@@ -115,7 +115,7 @@ git push --set-upstream origin next
   6. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
 
       ```bash
-      git feature-to-master-hard WIP-1
+      git feature-to-master WIP-1
       ```
 
   7. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
