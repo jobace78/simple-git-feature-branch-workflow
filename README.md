@@ -123,7 +123,6 @@ git remote set-head origin master
 * auto : OK
 * feature-abort : OK
 * feature-begin-no-reset : OK
-* feature-begin : OK
 * feature-clean : OK
 * feature-continue : OK
 * feature-end : OK
