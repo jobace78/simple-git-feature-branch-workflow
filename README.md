@@ -128,13 +128,9 @@ git remote set-head origin master
 * feature-continue : OK
 * feature-end : OK
 * feature-list : OK
-* feature-status : DEPRECATED
-* feature-to-infinity-and-beyond-no-reset : DEPRECATED
 * feature-to-infinity-and-beyond : OK
 * feature-to-master-no-reset : OK
-* feature-to-master : DEPRECATED
 * feature-to-next-no-reset : OK
-* feature-to-next : DEPRECATED
 * feature-where-is : OK
 * publish-master : OK
 * publish-next : OK
