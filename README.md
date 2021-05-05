@@ -146,10 +146,10 @@ git push --set-upstream origin next
 * feature-status : need more testing
 * feature-to-infinity-and-beyond-no-reset : need more testing
 * feature-to-infinity-and-beyond : OK
-* feature-to-master-no-reset : need more testing
-* feature-to-master : OK
-* feature-to-next-no-reset : need more testing
-* feature-to-next : OK
+* feature-to-master-no-reset : OK
+* feature-to-master : DEPRECATED
+* feature-to-next-no-reset : OK
+* feature-to-next : DEPRECATED
 * feature-where-is : OK
 * publish-master : OK
 * publish-next : OK
