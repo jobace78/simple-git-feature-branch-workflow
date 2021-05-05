@@ -6,7 +6,7 @@
     echo '-- THIS ALIAS IS IN BETA STATE --'; \
     echo; \
     if [ x"${1}" = x ]; then \
-      echo 'usage: git release <release name>'; \
+      echo 'Usage: git release <release name>'; \
     else \
       git fetch origin --prune-tags --tags && \
       git tag "${1}" "${2:-origin/master}" && \

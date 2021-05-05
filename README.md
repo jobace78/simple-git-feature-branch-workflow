@@ -74,10 +74,7 @@ echo '# test' > README.md && \
 git add README.md && \
 git commit -m "Initial commit" && \
 git push --set-upstream origin master && \
-git remote set-head origin master && \
-git branch next && \
-git checkout next && \
-git push --set-upstream origin next
+git remote set-head origin master
 ```
 
   1. *Begin* a new feature:
@@ -100,25 +97,13 @@ git push --set-upstream origin next
       git feature-end WIP-1
       ```
 
-  4. *Merge* (A.K.A. integrate) the feature in the local **next** branch:
-
-      ```bash
-      git feature-to-next WIP-1
-      ```
-
-  5. *Push* (A.K.A. publish) the local **next** branch into **remote/origin**:
-
-      ```bash
-      git publish-next
-      ```
-
-  6. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
+  4. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
 
       ```bash
       git feature-to-master WIP-1
       ```
 
-  7. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
+  5. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
 
       ```bash
       git publish-master
@@ -137,14 +122,14 @@ git push --set-upstream origin next
 * auto-dry-run : OK
 * auto : OK
 * feature-abort : OK
-* feature-begin-no-reset : need more testing
+* feature-begin-no-reset : OK
 * feature-begin : OK
 * feature-clean : OK
 * feature-continue : OK
 * feature-end : OK
 * feature-list : OK
-* feature-status : need more testing
-* feature-to-infinity-and-beyond-no-reset : need more testing
+* feature-status : DEPRECATED
+* feature-to-infinity-and-beyond-no-reset : DEPRECATED
 * feature-to-infinity-and-beyond : OK
 * feature-to-master-no-reset : OK
 * feature-to-master : DEPRECATED
