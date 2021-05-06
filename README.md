@@ -40,18 +40,14 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin-no-reset.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-no-reset.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-no-reset.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
@@ -80,7 +76,7 @@ git remote set-head origin master
   1. *Begin* a new feature:
 
       ```bash
-      git feature-begin WIP-1
+      git feature-begin-no-reset WIP-1
       ```
 
   2. Add something:
@@ -100,7 +96,7 @@ git remote set-head origin master
   4. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
 
       ```bash
-      git feature-to-master WIP-1
+      git feature-to-master-no-reset WIP-1
       ```
 
   5. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
@@ -127,7 +123,7 @@ git remote set-head origin master
 * feature-continue : OK
 * feature-end : OK
 * feature-list : OK
-* feature-to-infinity-and-beyond : OK
+* feature-to-infinity-and-beyond : DEPRECATED
 * feature-to-master-no-reset : OK
 * feature-to-next-no-reset : OK
 * feature-where-is : OK
