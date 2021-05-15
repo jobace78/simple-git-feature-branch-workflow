@@ -36,31 +36,29 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
 
       ```text
       [include]
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-end.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-status.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-infinity-and-beyond.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next-no-reset.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-feature.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
       ```
 
 ## Usage
 
 We'll create a "sandbox" to play safe:
 
-```bash
+```shell
 cd /tmp || exit 1 && \
 git init --bare test.git && \
 git clone test.git test && \
@@ -75,33 +73,33 @@ git remote set-head origin master
 
   1. *Begin* a new feature:
 
-      ```bash
+      ```shell
       git feature-begin-no-reset WIP-1
       ```
 
   2. Add something:
 
-      ```bash
+      ```shell
       echo 'test' > test.txt
       git add test.txt
       git auto
       ```
 
-  3. *End* the feature and *push* (A.K.A. publish) the feature at **remote/origin**:
+  3. *Push* (A.K.A. publish) the local **feature** branch into **remote/origin**:
 
-      ```bash
-      git feature-end WIP-1
+      ```shell
+      git publish-feature WIP-1
       ```
 
   4. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
 
-      ```bash
+      ```shell
       git feature-to-master-no-reset WIP-1
       ```
 
   5. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
 
-      ```bash
+      ```shell
       git publish-master
       ```
 
@@ -115,18 +113,17 @@ git remote set-head origin master
 
 ## Status
 
-* auto-dry-run : OK
 * auto : OK
+* auto-dry-run : OK
 * feature-abort : OK
 * feature-begin-no-reset : OK
 * feature-clean : OK
 * feature-continue : OK
-* feature-end : OK
 * feature-list : OK
-* feature-to-infinity-and-beyond : DEPRECATED
 * feature-to-master-no-reset : OK
 * feature-to-next-no-reset : OK
 * feature-where-is : OK
+* publish-feature : OK
 * publish-master : OK
 * publish-next : OK
 * release : need more testing
