@@ -11,9 +11,9 @@
       git fetch origin --prune && \
       git checkout next && \
       if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
-        git merge --log --message 'Merge branch '"${feature_name}"' into master' --no-ff --signoff "${feature_name}"; \
+        git merge --log --message 'Merge branch '"${feature_name}"' into next' --no-ff --signoff "${feature_name}"; \
       else \
-        git merge --log --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
+        git merge --log --message 'Merge branch '"${feature_name}"' into next' --no-ff "${feature_name}"; \
       fi; \
     fi; \
     }; f"
