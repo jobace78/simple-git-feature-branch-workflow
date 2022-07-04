@@ -10,6 +10,10 @@
       [ -n "${feature_name}" ] || { echo "feature_name was NOT found, exiting."; exit 1; }; \
       git fetch origin --prune && \
       git checkout master && \
-      git merge --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
+      if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
+        git merge --log --message 'Merge branch '"${feature_name}"' into master' --no-ff --signoff "${feature_name}"; \
+      else \
+        git merge --log --message 'Merge branch '"${feature_name}"' into master' --no-ff "${feature_name}"; \
+      fi; \
     fi; \
     }; f"
