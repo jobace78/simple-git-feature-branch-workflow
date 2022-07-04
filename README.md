@@ -49,9 +49,6 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-feature.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
       ```
 
 ## Usage
@@ -126,9 +123,6 @@ git remote set-head origin master
 * publish-feature : OK
 * publish-master : OK
 * publish-next : OK
-* release : need more testing
-* release-clean : need more testing
-* release-status : need more testing
 
 ## License
 
