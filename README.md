@@ -63,7 +63,7 @@ cd test && \
 git config user.email example@example.org && \
 echo '# test' > README.md && \
 git add README.md && \
-git commit -m "Initial commit" && \
+git commit --no-gpg-sign -m "Initial commit" && \
 git push --set-upstream origin master && \
 git remote set-head origin master
 ```
