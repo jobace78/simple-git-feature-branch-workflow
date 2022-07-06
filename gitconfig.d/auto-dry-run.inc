@@ -1,8 +1,8 @@
 [alias]
 
   auto-dry-run = "!f() { \
-    for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1>/dev/null; then echo "${c} was NOT found, exiting."; exit 1; fi; done; \
-    repository_name=$(git remote get-url origin | tr ./:@ _ 2>/dev/null); \
+    for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1> /dev/null; then echo "${c} was NOT found, exiting."; exit 1; fi; done; \
+    repository_name=$(git remote get-url origin | tr ./:@ _ 2> /dev/null); \
     echo "${*:-CLI}" > /tmp/"${repository_name:?}".msg; \
     echo >> /tmp/"${repository_name:?}".msg; \
     git status --porcelain=v1 --untracked-files=no -M >> /tmp/"${repository_name:?}".msg; \
