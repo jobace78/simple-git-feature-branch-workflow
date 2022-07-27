@@ -10,18 +10,15 @@
       message="${*}"; \
       git fetch origin --prune && \
       git checkout master && \
-      if [ -n \"${message}\" ]; then \
-        if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
-          git merge --log --message 'Merge branch '"${feature_name:?}"' into master ['\"${message}\"']' --no-ff --signoff "${feature_name:?}"; \
-        else \
-          git merge --log --message 'Merge branch '"${feature_name:?}"' into master ['\"${message}\"']' --no-ff "${feature_name:?}"; \
-        fi; \
+      if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
+        git_merge_options='--log --no-ff --signoff'; \
       else \
-        if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
-          git merge --log --message 'Merge branch '"${feature_name:?}"' into master' --no-ff --signoff "${feature_name:?}"; \
-        else \
-          git merge --log --message 'Merge branch '"${feature_name:?}"' into master' --no-ff "${feature_name:?}"; \
-        fi; \
+        git_merge_options='--log --no-ff'; \
+      fi; \
+      if [ -n \"${message}\" ]; then \
+        git merge ${git_merge_options} --message 'Merge branch '"${feature_name:?}"' into master -- '\"${message}\"'' "${feature_name:?}"; \
+      else \
+        git merge ${git_merge_options} --message 'Merge branch '"${feature_name:?}"' into master' "${feature_name:?}"; \
       fi; \
     fi; \
     }; f"
