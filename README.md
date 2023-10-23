@@ -37,7 +37,7 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
       ```text
       [include]
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-dry-run.inc
+        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-staged-only.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
@@ -115,7 +115,7 @@ git remote set-head origin master
 ## Status
 
 * auto : OK
-* auto-dry-run : OK
+* auto-staged-only : OK
 * feature-abort : OK
 * feature-begin : OK
 * feature-clean : OK
