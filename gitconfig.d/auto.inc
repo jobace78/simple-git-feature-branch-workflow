@@ -10,7 +10,7 @@
       if [ -x "$(command -v gpg)" ] && [ "$(git config commit.gpgsign 2> /dev/null)" = 'true' ]; then \
         git_commit_options='--all --signoff'; \
       else \
-        git_commit_options='--all'; \
+        git_commit_options='--all --no-signoff'; \
       fi; \
       git commit ${git_commit_options} -F /tmp/"${repository_name:?}".msg; \
     fi; \
