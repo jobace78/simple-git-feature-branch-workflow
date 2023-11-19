@@ -27,7 +27,7 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
   1. Get this repo:
 
       ```text
-      git clone https://github.com/jobace78/simple-git-feature-branch-workflow.git
+      git clone https://github.com/jobace78/simple-git-feature-branch-workflow.git ~/.simple-git-feature-branch-workflow
       ```
 
   2. Update your configuration:
@@ -36,22 +36,22 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
 
       ```text
       [include]
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/auto-staged-only.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-feature.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
-        path = ~/simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/auto.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/auto-staged-only.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-feature.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
       ```
 
 ## Usage
