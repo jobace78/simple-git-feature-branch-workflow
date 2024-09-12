@@ -5,7 +5,7 @@
     if [ x"${1}" = x ]; then \
       echo 'Usage: git feature-where-is <FEATURE NAME>...'; \
     else \
-      feature_name=$(if echo "${1}" | grep -q 'feature/'; then echo "${*}" | tr ' ' '-'; else echo feature/"${*}" | tr ' ' '-'; fi); \
+      feature_name=feature/$(echo "${*}" | grep -o '[^/]*$' | tr ' ' '-'); \
       git fetch origin --prune && \
       git branch --all --contains "${feature_name:?}" | grep -v 'feature/'; \
     fi; \
