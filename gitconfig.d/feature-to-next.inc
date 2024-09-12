@@ -5,7 +5,7 @@
     if [ x"${1}" = x ]; then \
       echo 'Usage: git feature-to-next <FEATURE NAME> [MESSAGE]...'; \
     else \
-      feature_name=$(if echo "${1}" | grep -q 'feature/'; then echo "${1}" | tr ' ' '-'; else echo feature/"${1}" | tr ' ' '-'; fi); \
+      feature_name=feature/$(echo "${*}" | grep -o '[^/]*$' | tr ' ' '-'); \
       shift; \
       message="${*}"; \
       git fetch origin --prune && \
