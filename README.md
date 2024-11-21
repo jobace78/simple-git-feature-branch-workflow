@@ -39,19 +39,21 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/auto.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/auto-staged-only.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-abort.inc
-        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-begin.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-clean.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-continue.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-from-main.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-from-master.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-from-next.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-list.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-to-main.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-to-master.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-to-next.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/feature-where-is.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-feature.inc
+        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-main.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release.inc
-        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release-clean.inc
-        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release-status.inc
       ```
 
 ## Usage
@@ -60,7 +62,7 @@ We'll create a "sandbox" to play safe:
 
 ```shell
 cd /tmp || exit 1 && \
-git init --bare test.git && \
+git init --bare --initial-branch main test.git && \
 git clone test.git test && \
 cd test && \
 git config commit.gpgsign false && \
@@ -68,14 +70,18 @@ git config user.email example@example.org && \
 echo '# test' > README.md && \
 git add README.md && \
 git commit -m "Initial commit" && \
-git push --set-upstream origin master && \
-git remote set-head origin master
+git push --set-upstream origin main && \
+git remote set-head origin main
 ```
 
-  1. *Begin* a new feature:
+  1. *Begin* a new feature from **main** or **master**:
 
       ```shell
-      git feature-begin WIP-1
+      git feature-from-main WIP-1
+      ```
+
+      ```shell
+      git feature-from-master WIP-1
       ```
 
   2. Add something:
@@ -83,7 +89,7 @@ git remote set-head origin master
       ```shell
       echo 'test' > test.txt
       git add test.txt
-      git auto
+      git auto-staged-only
       ```
 
   3. *Push* (A.K.A. publish) the local **feature** branch into **remote/origin**:
@@ -92,23 +98,37 @@ git remote set-head origin master
       git publish-feature WIP-1
       ```
 
-  4. *Merge* (A.K.A. integrate) the feature in the local **master** branch:
+  4. *Merge* (A.K.A. integrate) the feature in the local **main** or **master** branch:
+
+      ```shell
+      git feature-to-main WIP-1
+      ```
 
       ```shell
       git feature-to-master WIP-1
       ```
 
-  5. *Push* (A.K.A. publish) the local **master** branch into **remote/origin**:
+  5. *Push* (A.K.A. publish) the local **main** or **master** branch into **remote/origin**:
+
+      ```shell
+      git publish-main
+      ```
 
       ```shell
       git publish-master
       ```
 
+  6. *Clean* the feature:
+
+      ```shell
+      git feature-clean
+      ```
+
 ## Notes
 
-  1. If you find any problem during the merge operation (git feature-to-next, git feature-to-master) you can abort at any time with `git feature-abort`.
+  1. If you find any problem during the merge operation (git feature-to-next, git feature-to-main or git feature-to-master) you can abort at any time with `git feature-abort`.
 
-  2. The merge operation (git feature-to-next, git feature-to-master) does not have a strict order (regarding other branches), but is advisable to merge a branch in a short space of time and **next** should be merged before **master**.
+  2. The merge operation (git feature-to-next, git feature-to-main or git feature-to-master) does not have a strict order (regarding other branches), but is advisable to merge the branch in a short space of time and **next** should be merged before **main** or **master**.
 
   3. You can check if a branch has been already merged with `git feature-where-is <feature branch name>`.
 
@@ -117,19 +137,21 @@ git remote set-head origin master
 * auto : OK
 * auto-staged-only : OK
 * feature-abort : OK
-* feature-begin : OK
 * feature-clean : OK
 * feature-continue : OK
+* feature-from-main : OK
+* feature-from-master : OK
+* feature-from-next : OK
 * feature-list : OK
+* feature-to-main : OK
 * feature-to-master : OK
 * feature-to-next : OK
 * feature-where-is : OK
 * publish-feature : OK
+* publish-main : OK
 * publish-master : OK
 * publish-next : OK
 * release : OK
-* release-clean : OK
-* release-status : OK
 
 ## License
 
