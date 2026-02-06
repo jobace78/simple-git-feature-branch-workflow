@@ -3,7 +3,7 @@
   feature-to-master = "!f() { \
     for c in awk cat cut echo git grep sed tr xargs; do if ! command -v ${c} 1> /dev/null; then echo "'${c}' was NOT found, exiting."; exit 1; fi; done; \
     if [ x"${1}" = x ]; then \
-      echo 'Usage: git feature-to-master <FEATURE NAME> [MESSAGE]...'; \
+      echo 'Usage: git feature-to-master <FEATURE NAME> [MESSAGE]'; \
     else \
       case \"${1}\" in \
         feature/*) feature_name=\"${1}\" ;; \

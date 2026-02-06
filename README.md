@@ -53,7 +53,6 @@ These aliases should work in any *NIX based OS (Linux, macOS, WSL ?¿?) with git
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-main.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-master.inc
         path = ~/.simple-git-feature-branch-workflow/gitconfig.d/publish-next.inc
-        path = ~/.simple-git-feature-branch-workflow/gitconfig.d/release.inc
       ```
 
 ## Usage
@@ -151,7 +150,6 @@ git remote set-head origin main
 * publish-main : OK
 * publish-master : OK
 * publish-next : OK
-* release : OK
 
 ## License
 
